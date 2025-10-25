@@ -41,6 +41,19 @@ export default function News() {
           {/* Update Entry */}
           <div className="bg-[#0f131c]/60 p-6 rounded-2xl shadow-md border border-gray-800 hover:border-blue-700/40 transition-all duration-300">
             <h4 className="text-2xl font-semibold mb-3 text-blue-400">
+              Pack Update – 1.21.9-1.21.10{" "}
+              <span className="text-gray-400 text-sm">(2025-09-13)</span>
+            </h4>
+            <ul className="list-disc list-inside text-gray-300 space-y-1">
+              <li>Adds 1.21.9 and 1.21.10 compatibility</li>
+              <li>Minecrafts next update may take a while for me to update to, becuase it includes alot of new rendering changes as revealed recently by Mojang.</li>
+              <li>By the message above i mean 1.21.11 or 1.22 or whatever they make the update (mounts of mayhem).</li>
+              <li>Benchmarking will start soon</li>
+            </ul>
+          </div>
+          
+          <div className="bg-[#0f131c]/60 p-6 rounded-2xl shadow-md border border-gray-800 hover:border-blue-700/40 transition-all duration-300">
+            <h4 className="text-2xl font-semibold mb-3 text-blue-400">
               Pack Update – 1.21.8{" "}
               <span className="text-gray-400 text-sm">(2025-09-13)</span>
             </h4>

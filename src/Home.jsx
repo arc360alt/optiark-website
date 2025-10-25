@@ -229,7 +229,7 @@ export default function App() {
             Performance Benchmark
           </h2>
           <p className="text-gray-400 mb-10">
-            See how OptiArk stacks up — tested on a ThinkPad with a 680M GPU.
+            See how OptiArk stacks up, tested on a ThinkPad with a 680M GPU.
           </p>
 
           {/* Bars */}

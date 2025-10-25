@@ -27,12 +27,22 @@ const DOWNLOAD_DATA = {
     "1.19.4": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7OLD/OptiArk.1.19.4.1.8.EB.mrpack",
     "1.16.5": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7/OptiArk.1.16.5.1.7.EB.mrpack"
   },
-  Old: {
+  Other: {
     "1.8.9 OptiFine": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7OLD/OptiArk.1.8.9.1.7.OptiFine.mrpack",
     "1.12.2 Sodium": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7OLD/OptiArk.1.12.2.1.7.Sodium.mrpack",
     "1.12.2 OptiFine": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7OLD/OptiArk.1.12.2.1.7.OptiFine.mrpack"
   }
 };
+
+// Add this at the top of your component file, after DOWNLOAD_DATA
+const TECH_ICONS = {
+  Sodium: "https://cdn.modrinth.com/data/AANobbMI/295862f4724dc3f78df3447ad6072b2dcd3ef0c9_96.webp",     
+  VulkanMod: "https://cdn.modrinth.com/data/JYQhtZtO/2b37b630b4be3c92101ddb500c628def9b57ea3d_96.webp",    
+  Nividium: "https://cdn.modrinth.com/data/SfMw2IZN/2db76d464a0f67cdb9e30fd99040eb096ac62016_96.webp",   
+  Embeddium: "https://cdn.modrinth.com/data/sk9rgfiA/55f9c50284f8abbbe2a485abfd6a16209201e451_96.webp",   
+  Other: "https://avatars.githubusercontent.com/u/69833574?s=280&v=4"       
+};
+
 
 export default function App() {
   const coverImage = "/a.png";
@@ -254,75 +264,99 @@ export default function App() {
       </section>
 
 
-      {/* Version Selector */}
-      <section id="downloads" className="py-20 px-8 bg-[#0f131c] relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-semibold mb-6 text-blue-300 text-center">Version Information</h2>
+{/* Version Selector */}
+<section id="downloads" className="py-20 px-8 bg-[#0f131c] relative z-10">
+  <div className="max-w-4xl mx-auto">
+    <h2 className="text-3xl font-semibold mb-8 text-blue-300 text-center">Version Information</h2>
 
-          {/* Technologies Tabs */}
-          <div className="flex justify-center gap-4 mb-6">
-            {technologies.map((tech) => (
-              <button
-                key={tech}
-                onClick={() => handleTechChange(tech)}
-                className={`px-4 py-2 rounded-xl font-semibold transition-all duration-200 ${
-                  selectedTech === tech ? "bg-blue-600 text-white shadow-[0_0_15px_#3b82f6]" : "bg-[#151b25] text-gray-300 hover:bg-[#1f2530]"
-                }`}
-              >
-                {tech}
-              </button>
-            ))}
-          </div>
+{/* Technologies Tabs with Individual Icons */}
+<div className="flex justify-center gap-4 mb-8 flex-wrap">
+  {technologies.map((tech) => (
+    <button
+      key={tech}
+      onClick={() => handleTechChange(tech)}
+      className={`flex items-center gap-2 px-4 py-2 rounded-xl font-semibold transition-all duration-200 ${
+        selectedTech === tech
+          ? "bg-blue-600 text-white shadow-[0_0_15px_#3b82f6]"
+          : "bg-[#151b25] text-gray-300 hover:bg-[#1f2530]"
+      }`}
+    >
+      {/* Individual tech icon */}
+      <img
+        src={TECH_ICONS[tech] || "/placeholder-icon.png"} // fallback placeholder
+        alt={`${tech} icon`}
+        className="w-6 h-6 rounded-full flex-shrink-0 object-cover"
+      />
+      <span>{tech}</span>
+    </button>
+  ))}
+</div>
 
-          {/* Versions Buttons */}
-          <div className="flex justify-center gap-4 flex-wrap mb-6">
-            {Object.keys(DOWNLOAD_DATA[selectedTech]).map((version) => {
-              const isUnsupported = version.toLowerCase().includes("unsupported");
-              const cleanName = version.replace(/\(unsupported\)/gi, "").trim();
-              return (
-                <button
-                  key={version}
-                  onClick={() => setSelectedVersion(version)}
-                  className={`px-3 py-2 rounded-lg font-medium text-sm transition-all duration-200 flex items-center gap-2 ${
-                    selectedVersion === version ? "bg-blue-500 text-white shadow-[0_0_15px_#3b82f6]" : "bg-[#1f2530] text-gray-300 hover:bg-[#2a2f38]"
-                  }`}
-                >
-                  <span>{cleanName}</span>
-                  {isUnsupported && (
-                    <span className="text-xs text-red-300 bg-red-900/30 px-2 py-0.5 rounded">
-                      Unsupported
-                    </span>
-                  )}
-                </button>
-              );
-            })}
-          </div>
 
-          {/* Download Button */}
-          <div className="text-center">
+    {/* Versions Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+      {Object.keys(DOWNLOAD_DATA[selectedTech]).map((version) => {
+        const isUnsupported = version.toLowerCase().includes("unsupported");
+        const cleanName = version.replace(/\(unsupported\)/gi, "").trim();
+        return (
+          <div
+            key={version}
+            className={`flex flex-col justify-between p-4 rounded-xl transition-all duration-200 border ${
+              selectedVersion === version
+                ? "bg-blue-600 text-white border-blue-500 shadow-[0_0_15px_#3b82f6]"
+                : "bg-[#1f2530] text-gray-300 border-[#2a2f38] hover:bg-[#2a2f38]"
+            }`}
+          >
+            <div className="flex justify-between items-center mb-2">
+              <span className="font-medium">{cleanName}</span>
+              {isUnsupported && (
+                <span className="text-xs text-red-300 bg-red-900/30 px-2 py-0.5 rounded">
+                  Unsupported
+                </span>
+              )}
+            </div>
             <button
-              onClick={() => handleDownload(selectedVersion)}
-              className="inline-block bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl text-lg font-semibold shadow-[0_0_20px_#3b82f6] hover:shadow-[0_0_30px_#60a5fa] transition-all"
+              onClick={() => setSelectedVersion(version)}
+              className={`mt-2 py-2 rounded-lg font-semibold text-sm transition-all duration-200 ${
+                selectedVersion === version
+                  ? "bg-white text-blue-600 hover:bg-gray-100"
+                  : "bg-blue-600 text-white hover:bg-blue-700"
+              }`}
             >
-              Download {selectedVersion ? `— ${selectedVersion.replace(/\(unsupported\)/gi, "").trim()}` : ""}
+              Select
             </button>
           </div>
-        </div>
-          {/* Conversion Tool Info */}
-          <p className="text-center text-sm text-gray-400 mt-8">
-            To convert these <span className="text-blue-400">.zip</span> packs into 
-            <span className="text-green-400"> .mrpack </span> files for use in Modrinth, 
-            use this tool:{" "}
-            <a
-              href="https://github.com/arc360alt/OptiArk/releases/tag/converter0.1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-500 hover:text-blue-400 underline transition-colors"
-            >
-              OptiArk Converter 0.1
-            </a>
-          </p>
-      </section>
+        );
+      })}
+    </div>
+
+    {/* Download Button */}
+    <div className="text-center mb-6">
+      <button
+        onClick={() => handleDownload(selectedVersion)}
+        className="inline-block bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl text-lg font-semibold shadow-[0_0_20px_#3b82f6] hover:shadow-[0_0_30px_#60a5fa] transition-all"
+      >
+        Download {selectedVersion ? `— ${selectedVersion.replace(/\(unsupported\)/gi, "").trim()}` : ""}
+      </button>
+    </div>
+
+    {/* Conversion Tool Info */}
+    <p className="text-center text-sm text-gray-400">
+      To convert these <span className="text-blue-400">.zip</span> packs into 
+      <span className="text-green-400"> .mrpack </span> files for use in Modrinth, 
+      use this tool:{" "}
+      <a
+        href="https://github.com/arc360alt/OptiArk/releases/tag/converter0.1"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-500 hover:text-blue-400 underline transition-colors"
+      >
+        OptiArk Converter 0.1
+      </a>
+    </p>
+  </div>
+</section>
+
 
       {/* Showcase Gallery */}
       <section className="py-20 px-8 bg-[#0b0f16] relative z-10">

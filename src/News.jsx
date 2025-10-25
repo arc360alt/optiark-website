@@ -12,7 +12,7 @@ export default function News() {
           <span className="text-white px-3 py-1 rounded bg-blue-700/30 font-semibold">
             News
           </span>
-          <a href="/adventure" className="text-gray-300 hover:text-white px-3 py-1 rounded transition-colors duration-200">
+          <a href="/#/adventure" className="text-gray-300 hover:text-white px-3 py-1 rounded transition-colors duration-200">
             Adventure Edition
           </a>
         </div>

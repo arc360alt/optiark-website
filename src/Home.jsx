@@ -109,8 +109,8 @@ export default function App() {
         <div className="fixed top-0 left-0 w-full z-50 backdrop-blur-sm bg-black/50 shadow-md">
           <div className="max-w-6xl mx-auto flex justify-center items-center gap-6 px-6 py-2">
             <span className="text-white px-3 py-1 rounded bg-blue-700/30 font-semibold">Home</span>
-            <a href="/news" className="text-gray-300 hover:text-white px-3 py-1 rounded transition-colors duration-200">News</a>
-            <a href="/adventure" className="text-gray-300 hover:text-white px-3 py-1 rounded transition-colors duration-200">Adventure Edition</a>
+            <a href="/#/news" className="text-gray-300 hover:text-white px-3 py-1 rounded transition-colors duration-200">News</a>
+            <a href="/#/adventure" className="text-gray-300 hover:text-white px-3 py-1 rounded transition-colors duration-200">Adventure Edition</a>
             
           </div>
         </div>

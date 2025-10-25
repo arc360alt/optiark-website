@@ -139,7 +139,7 @@ export default function App() {
 
     {/* News */}
     <a
-      href="/news"
+      href="/#/news"
       // target="_blank"
       rel="noopener noreferrer"
       className="text-gray-300 hover:text-white px-3 py-1 rounded transition-colors duration-200"

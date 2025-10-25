@@ -94,7 +94,7 @@ export default function App() {
         "WARNING: USE THIS VERSION AT YOUR OWN RISK, IT IS IN ALPHA AND IS STILL IN CONSTANT DEVELOPMENT",
       ],
       images: ["/showcase1.png", "/showcase2.png"],
-      download: "https://github.com/arc360alt/arcswebsite/releases/download/oa-ae/OptiArk.Adventure.Edition.0.5-EARLYPR.mrpack",
+      download: "https://github.com/arc360alt/optiark-website/releases/download/oaaev5/OptiArk.Adventure.Edition.0.5.mrpack",
     },
   };
 

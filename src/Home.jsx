@@ -109,7 +109,6 @@ export default function App() {
   </div>
 )}
 
-
       {/* Hero Section */}
       <section className="relative flex flex-col justify-center items-center text-center p-8 h-screen">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-transparent blur-3xl animate-pulse pointer-events-none"></div>
@@ -376,11 +375,23 @@ export default function App() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-10 text-center text-gray-500 border-t border-gray-800 bg-[#0a0c12]">
-        <p>© 2025 Made with ❤️ by Arc360 :3</p>
-        Not affiliated with or a product of Mojang or Microsoft.
-      </footer>
+{/* Footer */}
+<footer className="py-10 text-center border-t border-gray-800 bg-[#0a0c12]">
+  <p className="text-gray-400">
+    © 2025 Made with ❤️ by Arc360 :3{" "}
+    <a
+      href="https://github.com/arc360alt/OptiArk"
+      className="text-blue-500 hover:text-blue-400 hover:underline transition-colors duration-200 font-semibold"
+    >
+      Modpack Source 
+    </a>
+
+  </p>
+  <p className="text-gray-500 mt-2">
+    Not affiliated with or a product of Mojang or Microsoft.
+  </p>
+</footer>
+
 
       {/* Tiny animation for toast */}
       <style>{`

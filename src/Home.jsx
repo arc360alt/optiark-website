@@ -60,7 +60,6 @@ export default function App() {
     if (!version) return;
     if (version.toLowerCase().includes("unsupported")) {
       setUnsupportedWarning(true);
-      setTimeout(() => setUnsupportedWarning(false), 3000);
       return;
     }
     const url = DOWNLOAD_DATA[selectedTech][version];
@@ -71,38 +70,45 @@ export default function App() {
     <div className="min-h-screen bg-gradient-to-b from-[#070b12] to-[#0a0e16] text-white font-sans overflow-x-hidden">
       {/* Small toast warning (center top) */}
 {unsupportedWarning && (
-  <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 bg-red-600/95 text-white px-6 py-4 rounded-xl shadow-lg shadow-red-500/40 backdrop-blur-none flex flex-col items-center gap-3 w-[90%] max-w-md border border-red-400">
-    <div className="flex justify-between items-center w-full">
-      <span className="font-semibold text-lg">⚠️ Unsupported Version</span>
-      <button
-        onClick={() => setUnsupportedWarning(false)}
-        className="text-white hover:text-gray-200 text-xl leading-none"
-      >
-        ✕
-      </button>
-    </div>
-    <p className="text-sm text-gray-100 text-center">
-      This version is marked as unsupported and may not work properly. Continue only if you understand the risks.
-    </p>
-    <div className="flex gap-3 mt-2">
-      <button
-        onClick={() => {
-          window.open(DOWNLOAD_DATA[selectedTech][selectedVersion], "_blank");
-          setUnsupportedWarning(false);
-        }}
-        className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-4 py-2 rounded-lg shadow-md transition-all duration-200"
-      >
-        Continue Anyway
-      </button>
-      <button
-        onClick={() => setUnsupportedWarning(false)}
-        className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg shadow-md transition-all duration-200"
-      >
-        Cancel
-      </button>
+  <div className="fixed inset-0 z-50 flex items-center justify-center">
+    {/* Blur overlay */}
+    <div className="absolute inset-0 bg-black/50 backdrop-blur-sm animate-fadeIn"></div>
+
+    {/* Popup */}
+    <div className="relative bg-red-600/90 text-white px-6 py-4 rounded-xl shadow-lg shadow-red-500/40 flex flex-col items-center gap-3 max-w-md w-[90%] border border-red-400 z-10 animate-popupIn">
+      <div className="flex justify-between items-center w-full">
+        <span className="font-semibold text-lg">⚠️ Unsupported Version</span>
+        <button
+          onClick={() => setUnsupportedWarning(false)}
+          className="text-white hover:text-gray-200 text-xl leading-none"
+        >
+          ✕
+        </button>
+      </div>
+      <p className="text-sm text-gray-100 text-center">
+        This version is marked as unsupported and may not work properly. Continue only if you understand the risks.
+      </p>
+      <div className="flex gap-3 mt-2">
+        <button
+          onClick={() => {
+            window.open(DOWNLOAD_DATA[selectedTech][selectedVersion], "_blank");
+            setUnsupportedWarning(false);
+          }}
+          className="bg-yellow-500 hover:bg-yellow-400 text-black font-semibold px-4 py-2 rounded-lg shadow-md transition-all duration-200"
+        >
+          Continue Anyway
+        </button>
+        <button
+          onClick={() => setUnsupportedWarning(false)}
+          className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg shadow-md transition-all duration-200"
+        >
+          Cancel
+        </button>
+      </div>
     </div>
   </div>
 )}
+
 
       {/* Hero Section */}
       <section className="relative flex flex-col justify-center items-center text-center p-8 h-screen">
@@ -387,6 +393,21 @@ export default function App() {
         .animate-fadeInOut {
           animation: fadeInOut 3s ease-in-out forwards;
         }
+            @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+
+  @keyframes popupIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  .animate-popupIn {
+    animation: popupIn 0.3s ease-out forwards;
+  }
       `}</style>
     </div>
   );

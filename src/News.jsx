@@ -39,6 +39,20 @@ export default function News() {
 
         <div className="space-y-10">
           {/* Update Entry */}
+          
+          <div className="bg-[#0f131c]/60 p-6 rounded-2xl shadow-md border border-gray-800 hover:border-blue-700/40 transition-all duration-300">
+            <h4 className="text-2xl font-semibold mb-3 text-blue-400">
+              Website Update - Better Version Picker{" "}
+              <span className="text-gray-400 text-sm">(2025-10-25)</span>
+            </h4>
+            <ul className="list-disc list-inside text-gray-300 space-y-1">
+              <li>All versions now have their own backround (Even on the Adventure Edition page)</li>
+              <li>It is now easier to click the versions, as now the entire box is clickable</li>
+              <li>Smoohter zoom animations on all of the version buttons.</li>
+              <li>Bug Fixes</li>
+            </ul>
+          </div>
+
           <div className="bg-[#0f131c]/60 p-6 rounded-2xl shadow-md border border-gray-800 hover:border-blue-700/40 transition-all duration-300">
             <h4 className="text-2xl font-semibold mb-3 text-blue-400">
               Pack Update – 1.21.9-1.21.10{" "}

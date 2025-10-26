@@ -48,6 +48,22 @@ const TECH_ICONS = {
   Other: "https://avatars.githubusercontent.com/u/69833574?s=280&v=4"       
 };
 
+// Backgrounds for each Minecraft version
+const VERSION_BACKGROUNDS = {
+  "1.21.10": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.10%201170x500.jpg",
+  "1.21.9": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.9_1170x500.jpg",
+  "1.21.8": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.8%201170x500.jpg",
+  "1.21.7": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.7-1170x500.jpg",
+  "1.21.6": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.6_1170x500.jpg",
+  "1.21.5": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.5_1170x500.jpg", // blank for now
+  "1.21.4": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.4_1170x500.jpg",
+  "1.20.1": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.20.1%201170x500.jpg",
+  "1.19.4": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1_19_4_release_header.jpg",
+  "1.18.2": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1-18-2-release-header.jpg",
+  "1.16.5": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/nether-header.jpg",
+  "1.12.2": "https://www.minecraft.net/content/dam/minecraftnet/archive/be692329014b85620ad11631650c1f91-Header.png",
+  "1.8.9": "https://minecraft.wiki/images/thumb/Java_Edition_1.8.9.png/800px-Java_Edition_1.8.9.png?3d88b"
+};
 
 export default function App() {
   const coverImage = "/a.png";
@@ -304,41 +320,61 @@ export default function App() {
 
 
     {/* Versions Grid */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-      {Object.keys(DOWNLOAD_DATA[selectedTech]).map((version) => {
-        const isUnsupported = version.toLowerCase().includes("unsupported");
-        const cleanName = version.replace(/\(unsupported\)/gi, "").trim();
-        return (
-          <div
-            key={version}
-            className={`flex flex-col justify-between p-4 rounded-xl transition-all duration-200 border ${
+<div className="flex justify-center gap-6 flex-wrap mb-6">
+  {Object.keys(DOWNLOAD_DATA[selectedTech]).map((version) => {
+    const isUnsupported = version.toLowerCase().includes("unsupported");
+    const cleanName = version.replace(/\(unsupported\)/gi, "").trim();
+
+    // Detect Minecraft version (e.g., "1.20.1")
+    const mcVersionMatch = cleanName.match(/\d+\.\d+(\.\d+)?/);
+    const mcVersion = mcVersionMatch ? mcVersionMatch[0] : null;
+    const backgroundImage = VERSION_BACKGROUNDS[mcVersion] || "";
+
+    return (
+      <div
+        key={version}
+        className="relative rounded-xl overflow-hidden bg-[#1b1f29] backdrop-blur-md shadow-md transform transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_0_25px_rgba(59,130,246,0.5)] cursor-pointer"
+        style={{
+          width: "220px",
+          minHeight: "130px",
+          backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        onClick={() => setSelectedVersion(version)} // make the card itself clickable
+      >
+        {/* Dark overlay */}
+        {backgroundImage && (
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm z-0 transition-all duration-300 hover:bg-black/50" />
+        )}
+
+        {/* Content */}
+        <div className="relative z-10 flex flex-col justify-center items-center p-4 gap-3">
+          <span className="text-gray-200 font-semibold text-lg">{cleanName}</span>
+          {isUnsupported && (
+            <span className="text-xs text-red-300 bg-red-900/30 px-2 py-0.5 rounded">
+              Unsupported
+            </span>
+          )}
+          <button
+            onClick={(e) => {
+              e.stopPropagation(); // prevent triggering card click
+              setSelectedVersion(version);
+            }}
+            className={`px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 ${
               selectedVersion === version
-                ? "bg-blue-600 text-white border-blue-500 shadow-[0_0_15px_#3b82f6]"
-                : "bg-[#1f2530] text-gray-300 border-[#2a2f38] hover:bg-[#2a2f38]"
+                ? "bg-blue-500 text-white shadow-[0_0_15px_#3b82f6]"
+                : "bg-[#2a2f38] text-gray-300 hover:bg-[#3a3f48]"
             }`}
           >
-            <div className="flex justify-between items-center mb-2">
-              <span className="font-medium">{cleanName}</span>
-              {isUnsupported && (
-                <span className="text-xs text-red-300 bg-red-900/30 px-2 py-0.5 rounded">
-                  Unsupported
-                </span>
-              )}
-            </div>
-            <button
-              onClick={() => setSelectedVersion(version)}
-              className={`mt-2 py-2 rounded-lg font-semibold text-sm transition-all duration-200 ${
-                selectedVersion === version
-                  ? "bg-white text-blue-600 hover:bg-gray-100"
-                  : "bg-blue-600 text-white hover:bg-blue-700"
-              }`}
-            >
-              Select
-            </button>
-          </div>
-        );
-      })}
-    </div>
+            Select
+          </button>
+        </div>
+      </div>
+    );
+  })}
+</div>
+
 
     {/* Download Button */}
     <div className="text-center mb-6">

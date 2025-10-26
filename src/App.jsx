@@ -6,6 +6,7 @@ export default function App() {
       name: "0.1.0 — The first release",
       date: "2025-08-12",
       featured: false,
+      unsupported: true,
       changelog: ["Inital Release"],
       images: ["/showcase1.png", "/showcase2.png"],
       download: "https://github.com/arc360alt/arcswebsite/releases/download/oa-ae/OptiArk.Adventure.Edition.0.1.mrpack",
@@ -14,6 +15,7 @@ export default function App() {
       name: "0.2.0",
       date: "2025-9-04",
       featured: false, // Auto-selected by default
+      unsupported: true,
       changelog: [
         "Add a bunch of new 3D items",
         "Re enable animations and biome colors",
@@ -30,6 +32,7 @@ export default function App() {
       name: "0.3.0 — Menu Update",
       date: "2025-09-10",
       featured: false,
+      unsupported: true,
       changelog: [
         "Adds more shaders",
         "Updates some mods",
@@ -49,6 +52,7 @@ export default function App() {
       name: "0.4.0 — The Texture Update",
       date: "2025-09-12",
       featured: false,
+      unsupported: true,
       changelog: [
         "Fix the stick model",
         "Remove distant horizens (caused alot of TPS issues)",
@@ -80,10 +84,11 @@ export default function App() {
       images: ["/showcase1.png", "/showcase2.png"],
       download: "https://github.com/arc360alt/arcswebsite/releases/download/oa-ae/OptiArk.Adventure.Edition.0.4.1.mrpack",
     },
-    "0.5.0-ALPHA": {
+    "0.5.0-BETA": {
       name: "0.5.0 — The Remake (IN DEVELOPMENT, BUGGY)",
       date: "2025-10-25",
       featured: false,
+      beta: true, // 👈 add this line
       changelog: [
         "Remade all the textures",
         "HMI updated so it looks much closer to A&S",
@@ -109,6 +114,21 @@ export default function App() {
 
   const current = versions[selectedVersion];
   const coverImage = "/cover.png"; // You set this manually in /public
+const [showUnsupported, setShowUnsupported] = useState(false);
+const [showBeta, setShowBeta] = useState(false);
+const [showUnsupportedWarning, setShowUnsupportedWarning] = useState(false);
+const [showBetaWarning, setShowBetaWarning] = useState(false);
+
+// Optional background images per version
+const VERSION_BACKGROUNDS = {
+  "0.1.0": "0.1.0.png",
+  "0.2.0": "0.2.0.png",
+  "0.3.0": "0.3.0.png",
+  "0.4.0": "/0.4.0.png",
+  "0.4.1": "cover.png",
+  "0.5.0-ALPHA": "/showcase1.png",
+  default: "showcase2.png", // fallback if none specified
+};
 
 
   
@@ -198,79 +218,177 @@ export default function App() {
         </div>
       </section>
 
-      {/* Version Info + Changelog */}
-      <section id="downloads" className="py-20 px-8 bg-[#0f131c] relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-semibold mb-6 text-blue-300">
-            Version Information
-          </h2>
+{/* Version Info + Changelog */}
+<section id="downloads" className="py-20 px-8 bg-[#0f131c] relative z-10">
+  <div className="max-w-4xl mx-auto">
+    <h2 className="text-3xl font-semibold mb-6 text-blue-300">
+      Version Information
+    </h2>
 
-          {/* Custom Version Selector Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-            {Object.keys(versions).map((v) => {
-              const version = versions[v];
-              const isSelected = selectedVersion === v;
-              return (
-                <button
-                  key={v}
-                  onClick={() => setSelectedVersion(v)}
-                  className={`relative p-4 rounded-xl border-2 transition-all duration-300 flex flex-col items-center justify-center font-semibold ${
-                    version.featured
-                      ? "border-yellow-400 shadow-[0_0_20px_#facc15] animate-pulse"
-                      : "border-gray-700"
-                  } ${isSelected ? "bg-blue-700/30" : "bg-[#151b25] hover:bg-[#1f2530]"} `}
-                >
-                  <span className="text-lg">{v}</span>
-                  {version.featured && (
-                    <span className="text-xs text-yellow-300 mt-1">★ Featured</span>
-                  )}
-                </button>
-              );
-            })}
-          </div>
+    {/* Version Grid */}
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+      {Object.keys(versions).map((v) => {
+        const version = versions[v];
+        const isSelected = selectedVersion === v;
 
-          <p className="text-gray-500 mb-4">Released: {current.date}</p>
+        const isUnsupported =
+          version.name.toLowerCase().includes("unsupported") ||
+          v.toLowerCase().includes("unsupported") ||
+          version.unsupported === true;
 
-          <div className="bg-[#131820] rounded-xl p-6 border border-gray-800 shadow-lg mb-6">
-            <h3 className="text-xl font-semibold mb-3 text-blue-200">
-              Changelog for {selectedVersion}
-            </h3>
-            <ul className="list-disc pl-6 text-gray-300 space-y-2">
-              {current.changelog.map((item, idx) => (
-                <li key={idx}>{item}</li>
-              ))}
-            </ul>
-          </div>
+        const isBeta =
+          version.name.toLowerCase().includes("alpha") ||
+          version.name.toLowerCase().includes("beta");
 
-          {/* Download Button */}
-          <a
-            href={current.download}
-            download
-            className="inline-block bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl text-lg font-semibold shadow-[0_0_20px_#3b82f6] hover:shadow-[0_0_30px_#60a5fa] transition-all"
+        const backgroundImage =
+          VERSION_BACKGROUNDS?.[v] || VERSION_BACKGROUNDS?.default || "";
+
+        return (
+          <button
+            key={v}
+            onClick={() => setSelectedVersion(v)}
+            className={`relative p-4 rounded-xl border-2 transition-all duration-300 flex flex-col items-center justify-center font-semibold overflow-hidden transform ${
+              version.featured
+                ? "border-yellow-400 shadow-[0_0_20px_#facc15] animate-pulse"
+                : "border-gray-700"
+            } ${
+              isSelected
+                ? "bg-blue-700/30 scale-105 shadow-[0_0_25px_rgba(59,130,246,0.5)]"
+                : "bg-[#151b25] hover:bg-[#1f2530] hover:scale-105"
+            }`}
+            style={{
+              backgroundImage: backgroundImage ? `url(${backgroundImage})` : "none",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
           >
-            Download this version
-          </a>
-        </div>
-      </section>
+            {backgroundImage && (
+              <div className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-all duration-300 hover:bg-black/50" />
+            )}
 
-      {/* Showcase Gallery */}
-      <section className="py-20 px-8 bg-[#0b0f16] relative z-10">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-semibold mb-8 text-purple-300">
-            Showcase Gallery
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {current.images.map((src, idx) => (
-              <img
-                key={idx}
-                src={src}
-                alt={`Screenshot ${idx + 1}`}
-                className="rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 hover:shadow-[0_0_25px_#a855f7]"
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+            <div className="relative z-10 text-center">
+              <span className="text-lg text-white drop-shadow-md">{v}</span>
+
+              {version.featured && (
+                <span className="block text-xs text-yellow-300 mt-1">
+                  ★ Featured
+                </span>
+              )}
+
+{version.beta && (
+  <span className="block text-xs text-orange-300 bg-orange-900/40 px-2 py-0.5 rounded mt-1">
+    Beta
+  </span>
+)}
+
+
+              {isUnsupported && (
+                <span className="block text-xs text-red-300 bg-red-900/40 px-2 py-0.5 rounded mt-2">
+                  Unsupported
+                </span>
+              )}
+
+              {isBeta && (
+                <span className="block text-xs text-yellow-300 bg-yellow-900/40 px-2 py-0.5 rounded mt-2">
+                  Beta
+                </span>
+              )}
+            </div>
+          </button>
+        );
+      })}
+    </div>
+
+    <p className="text-gray-500 mb-4">Released: {current.date}</p>
+
+    <div className="bg-[#131820] rounded-xl p-6 border border-gray-800 shadow-lg mb-6">
+      <h3 className="text-xl font-semibold mb-3 text-blue-200">
+        Changelog for {selectedVersion}
+      </h3>
+      <ul className="list-disc pl-6 text-gray-300 space-y-2">
+        {current.changelog.map((item, idx) => (
+          <li key={idx}>{item}</li>
+        ))}
+      </ul>
+    </div>
+
+    {/* Download Button */}
+    <button
+onClick={() => {
+  const version = versions[selectedVersion];
+  
+  if (version.unsupported) {
+    setShowUnsupported(true);
+    return;
+  }
+
+  if (version.beta || version.name.toLowerCase().includes("alpha") || version.name.toLowerCase().includes("beta")) {
+    setShowBeta(true);
+    return;
+  }
+
+  window.open(version.download, "_blank");
+}}
+      className="inline-block bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl text-lg font-semibold shadow-[0_0_20px_#3b82f6] hover:shadow-[0_0_30px_#60a5fa] transition-all"
+    >
+      Download this version
+    </button>
+  </div>
+
+{/* Popups */}
+{(showUnsupported || showBeta) && (
+  <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-md z-50 animate-fadeIn">
+    <div
+      className={`bg-[#151b25]/90 border rounded-2xl p-8 shadow-2xl max-w-md text-center animate-slideUp ${
+        showUnsupported ? "border-red-500/40" : "border-yellow-500/40"
+      }`}
+    >
+      <h2
+        className={`text-2xl font-bold mb-4 ${
+          showUnsupported ? "text-red-400" : "text-yellow-400"
+        }`}
+      >
+        {showUnsupported ? "⚠️ Unsupported Version" : "🧪 Beta Version"}
+      </h2>
+
+      <p className="text-gray-300 mb-6">
+        {showUnsupported
+          ? "This version may not work properly or could cause issues. Proceed only if you understand the risks."
+          : "This version is still in testing and may contain bugs or performance issues."}
+      </p>
+
+      <div className="flex justify-center gap-4">
+        <button
+          onClick={() => {
+            setShowUnsupported(false);
+            setShowBeta(false);
+          }}
+          className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg transition-all"
+        >
+          ×
+        </button>
+        <button
+          onClick={() => {
+            const version = versions[selectedVersion];
+            setShowUnsupported(false);
+            setShowBeta(false);
+            window.open(version.download, "_blank");
+          }}
+          className={`px-4 py-2 rounded-lg font-semibold transition-all ${
+            showUnsupported
+              ? "bg-red-600 hover:bg-red-700"
+              : "bg-yellow-600 hover:bg-yellow-700"
+          }`}
+        >
+          Continue Anyway
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
+</section>
+
 
 {/* Footer */}
 <footer className="py-10 text-center border-t border-gray-800 bg-[#0a0c12]">

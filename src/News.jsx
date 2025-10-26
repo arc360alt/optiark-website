@@ -42,6 +42,19 @@ export default function News() {
           
           <div className="bg-[#0f131c]/60 p-6 rounded-2xl shadow-md border border-gray-800 hover:border-blue-700/40 transition-all duration-300">
             <h4 className="text-2xl font-semibold mb-3 text-blue-400">
+              Website Update - Better preformance bars{" "}
+              <span className="text-gray-400 text-sm">(2025-10-26)</span>
+            </h4>
+            <ul className="list-disc list-inside text-gray-300 space-y-1">
+              <li>Update the preformance bars to have a discription attached to them.</li>
+              <li>So when you hover over each bar you can get a costom discription on how I tested that one version.</li>
+              <li>Smoohter zoom animations on all of the bars.</li>
+              <li>Bug Fixes</li>
+            </ul>
+          </div>
+
+          <div className="bg-[#0f131c]/60 p-6 rounded-2xl shadow-md border border-gray-800 hover:border-blue-700/40 transition-all duration-300">
+            <h4 className="text-2xl font-semibold mb-3 text-blue-400">
               Website Update - Better Version Picker{" "}
               <span className="text-gray-400 text-sm">(2025-10-25)</span>
             </h4>

@@ -87,6 +87,10 @@ export default function App() {
     if (url) window.open(url, "_blank");
   };
 
+const [hoveredBar, setHoveredBar] = useState(null);
+const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#070b12] to-[#0a0e16] text-white font-sans overflow-x-hidden">
       {/* Small toast warning (center top) */}
@@ -239,56 +243,91 @@ export default function App() {
         </div>
       </section>
 
-      {/* Performance Benchmark Section */}
-      <section className="py-20 px-8 bg-[#10141d] relative z-10">
+{/* Performance Section */}
+<section id="performance" className="py-20 px-8 bg-[#0f131c] relative z-10">
+  {(() => {
+    const [hoveredBar, setHoveredBar] = useState(null);
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    const maxFPS = 1000; // max bar range (adjustable)
+
+    return (
+      <>
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold mb-4 text-green-400">
+          <h2 className="text-3xl font-semibold mb-2 text-blue-300">
             Performance Benchmark
           </h2>
           <p className="text-gray-400 mb-10">
             See how OptiArk stacks up, tested on a ThinkPad with a 680M GPU.
           </p>
 
-          {/* Bars */}
-          <div className="flex flex-col gap-6 items-center">
-            {/* Bar 1 */}
-            <div className="w-full bg-[#1a1e27] rounded-xl overflow-hidden shadow-lg">
+          <div className="space-y-6">
+            {[
+              {
+                label: "OptiArk VULKAN",
+                value: 820,
+                color: "bg-red-500",
+                description:
+                  "Measured on a ThinkPad with 680M GPU using OptiArk Vulkan, exceptional performance boost. (Defualt settings that are set out of the box)",
+              },
+              {
+                label: "OptiArk (Default)",
+                value: 560,
+                color: "bg-blue-500",
+                description:
+                  "Normal minecraft gameplay, using settings that are set out of the box with OptiArk.",
+              },
+              {
+                label: "Competitor Modpack",
+                value: 340,
+                color: "bg-green-500",
+                description:
+                  "Playing at the same exact settings as with Optiark, this modpack is the most popular one on Modrinth. Significant preformance loss.",
+              },
+            ].map((test, i) => (
               <div
-                className="bg-red-600 text-left px-4 py-2 font-bold text-sm text-white"
-                style={{ width: "82%" }}
+                key={i}
+                className="relative w-full h-8 bg-[#1a1f2b] rounded-xl overflow-hidden cursor-pointer border border-gray-700 transition-all duration-300 transform hover:scale-[1.05] hover:shadow-[0_0_25px_rgba(255,255,255,0.25)]"
+                onMouseEnter={() => setHoveredBar(test)}
+                onMouseLeave={() => setHoveredBar(null)}
+                onMouseMove={(e) =>
+                  setMousePosition({ x: e.clientX, y: e.clientY })
+                }
               >
-                OptiArk VULKAN FPS: 820
-              </div>
-            </div>
+                {/* Bar Fill */}
+                <div
+                  className={`${test.color} h-full rounded-xl transition-all duration-300`}
+                  style={{
+                    width: `${(test.value / maxFPS) * 100}%`,
+                    transformOrigin: "left",
+                  }}
+                ></div>
 
-            {/* Bar 2 */}
-            <div className="w-full bg-[#1a1e27] rounded-xl overflow-hidden shadow-lg">
-              <div
-                className="bg-blue-600 text-left px-4 py-2 font-bold text-sm text-white"
-                style={{ width: "56%" }}
-              >
-                OptiArk FPS: 560
+                {/* Label */}
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-sm text-gray-100 drop-shadow-md pointer-events-none">
+                  {test.label}: {test.value} FPS
+                </span>
               </div>
-            </div>
-
-            {/* Bar 3 */}
-            <div className="w-full bg-[#1a1e27] rounded-xl overflow-hidden shadow-lg">
-              <div
-                className="bg-green-600 text-left px-4 py-2 font-bold text-sm text-white"
-                style={{ width: "34%" }}
-              >
-                Competitor Pack: 340
-              </div>
-            </div>
+            ))}
           </div>
-
-          <p className="text-xs text-gray-500 mt-6 italic">
-            *Benchmark results can vary based on hardware, game version, and specific in-game scenarios.
-            This pack is still in development and may change at any time.
-          </p>
         </div>
-      </section>
 
+        {/* Tooltip */}
+        {hoveredBar && (
+          <div
+            className="fixed bg-[#151b25]/90 border border-gray-700 text-gray-200 text-sm px-3 py-2 rounded-lg shadow-lg pointer-events-none transition-opacity duration-150 z-50 backdrop-blur-md"
+            style={{
+              top: mousePosition.y + 15,
+              left: mousePosition.x + 15,
+            }}
+          >
+            {hoveredBar.description}
+          </div>
+        )}
+      </>
+    );
+  })()}
+</section>
 
 {/* Version Selector */}
 <section id="downloads" className="py-20 px-8 bg-[#0f131c] relative z-10">

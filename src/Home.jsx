@@ -2,41 +2,41 @@ import React, { useState } from "react";
 
 const DOWNLOAD_DATA = {
     "Sodium": {
-        "1.20.1 (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8.0-1.21.9-10/OptiArk.1.20.1.1.8.Sodium.zip",
-        "1.21.4 (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8.0-1.21.9-10/OptiArk.1.21.4.1.8.Sodium.zip",
-        "1.21.5": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8.0-1.21.9-10/OptiArk.1.21.5.1.8.Sodium.zip",
-        "1.21.6": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8.0-1.21.9-10/OptiArk.1.21.6.1.8.Sodium.zip",
-        "1.21.7": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8.0-1.21.9-10/OptiArk.1.21.7.1.8.Sodium.zip",
-        "1.21.8": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8.0-1.21.9-10/OptiArk.1.21.8.1.8.Sodium.zip",
-        "1.21.9": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8.0-1.21.9-10/OptiArk.1.21.9.1.8.Sodium.zip",
-      "1.21.10": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8.0-1.21.9-10/OptiArk.1.21.10.1.8.Sodium.zip"
+        "1.20.1 (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.20.1.1.8.Sodium.zip",
+        "1.21.4 (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.4.1.8.Sodium.zip",
+        "1.21.5": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.5.1.8.Sodium.zip",
+        "1.21.6": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.6.1.8.Sodium.zip",
+        "1.21.7": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.7.1.8.Sodium.zip",
+        "1.21.8": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.8.1.8.Sodium.zip",
+        "1.21.9": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.9.1.8.Sodium.zip",
+        "1.21.10": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.10.1.8.Sodium.zip"
     },
     "VulkanMod": {
-        "1.20.1VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8.0-1.21.9-10/OptiArk.1.20.1.1.8.VK.zip",
-        "1.21.4VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8.0-1.21.9-10/OptiArk.1.21.4.1.8.VK.zip",
-        "1.21.5VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8.0-1.21.9-10/OptiArk.1.21.5.1.8.VK.zip"
+        "1.20.1VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.20.1.1.8.VK.zip",
+        "1.21.4VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.4.1.8.VK.zip",
+        "1.21.5VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.5.1.8.VK.zip"
     },
     "Nividium": {
-        "1.20.1NV (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8.0-1.21.9-10/OptiArk.1.20.1.1.8.NV.zip",
-        "1.21.4NV (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8.0-1.21.9-10/OptiArk.1.21.4.1.8.NV.zip",
-        "1.21.5NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8.0-1.21.9-10/OptiArk.1.21.5.1.8.NV.zip",
-        "1.21.6NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8.0-1.21.9-10/OptiArk.1.21.6.1.8.NV.zip",
-        "1.21.7NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8.0-1.21.9-10/OptiArk.1.21.7.1.8.NV.zip",
-        "1.21.8NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8.0-1.21.9-10/OptiArk.1.21.8.1.8.NV.zip",
-        "1.21.9NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8.0-1.21.9-10/OptiArk.1.21.9.1.8.NV.zip",
-      "1.21.10NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8.0-1.21.9-10/OptiArk.1.21.10.1.8.NV.zip"
+        "1.20.1NV (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.20.1.1.8.NV.zip",
+        "1.21.4NV (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.4.1.8.NV.zip",
+        "1.21.5NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.5.1.8.NV.zip",
+        "1.21.6NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.6.1.8.NV.zip",
+        "1.21.7NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.7.1.8.NV.zip",
+        "1.21.8NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.8.1.8.NV.zip",
+        "1.21.9NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.9.1.8.NV.zip",
+        "1.21.10NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.10.1.8.NV.zip"
     },
-  Embeddium: {
-    "1.20.1": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7/OptiArk.1.20.1.1.7.EB.mrpack",
-    "1.19.4": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7OLD/OptiArk.1.19.4.1.8.EB.mrpack",
-    "1.18.2": "https://github.com/arc360alt/optiark-website/releases/download/old/OptiArk.1.18.2.1.8.EB.mrpack",
-    "1.16.5": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7/OptiArk.1.16.5.1.7.EB.mrpack"
-  },
-  Other: {
-    "1.8.9 OptiFine": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7OLD/OptiArk.1.8.9.1.7.OptiFine.mrpack",
-    "1.12.2 Sodium": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7OLD/OptiArk.1.12.2.1.7.Sodium.mrpack",
-    "1.12.2 OptiFine": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7OLD/OptiArk.1.12.2.1.7.OptiFine.mrpack"
-  }
+    "Embeddium": {
+        "1.20.1": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7/OptiArk.1.20.1.1.7.EB.mrpack",
+        "1.19.4": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7OLD/OptiArk.1.19.4.1.8.EB.mrpack",
+        "1.18.2": "https://github.com/arc360alt/optiark-website/releases/download/old/OptiArk.1.18.2.1.8.EB.mrpack",
+        "1.16.5": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7/OptiArk.1.16.5.1.7.EB.mrpack"
+    },
+    "Old": {
+        "1.8.9 OptiFine": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7OLD/OptiArk.1.8.9.1.7.OptiFine.mrpack",
+        "1.12.2 Sodium": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7OLD/OptiArk.1.12.2.1.7.Sodium.mrpack",
+        "1.12.2 OptiFine": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7OLD/OptiArk.1.12.2.1.7.OptiFine.mrpack"
+    }
 };
 
 // Add this at the top of your component file, after DOWNLOAD_DATA

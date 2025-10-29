@@ -88,7 +88,7 @@ export default function App() {
       name: "0.5.0 — The Remake (IN DEVELOPMENT, BUGGY)",
       date: "2025-10-25",
       featured: false,
-      beta: true, // 👈 add this line
+      beta: true, 
       changelog: [
         "Remade all the textures",
         "HMI updated so it looks much closer to A&S",
@@ -97,12 +97,13 @@ export default function App() {
         "Backport the Happy Ghast to this version",
         "Fix the 3D Buckets",
         "Plants and seeds now appear as 3D in your hands",
+        "New mob textures (Some of the pig and other mob texutres are broken for now)",
         "Whole bunch of other things i forgot because ive been working on this 1 update for 3 weeks",
         "Bug fixes from the last version",
         "WARNING: USE THIS VERSION AT YOUR OWN RISK, IT IS IN ALPHA AND IS STILL IN CONSTANT DEVELOPMENT",
       ],
       images: ["/showcase1.png", "/showcase2.png"],
-      download: "https://github.com/arc360alt/optiark-website/releases/download/oaaev5/OptiArk.Adventure.Edition.0.5-test3.mrpack",
+      download: "https://github.com/arc360alt/optiark-website/releases/download/oaaev5/OptiArk.Adventure.Edition.0.5-test4.mrpack",
     },
   };
 

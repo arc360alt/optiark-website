@@ -391,6 +391,24 @@ onClick={() => {
 
 </section>
 
+      {/* Showcase Gallery */}
+      <section className="py-20 px-8 bg-[#0b0f16] relative z-10">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-semibold mb-8 text-purple-300">
+            Showcase Gallery
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {current.images.map((src, idx) => (
+              <img
+                key={idx}
+                src={src}
+                alt={`Screenshot ${idx + 1}`}
+                className="rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 hover:shadow-[0_0_25px_#a855f7]"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
 {/* Footer */}
 <footer className="py-10 text-center border-t border-gray-800 bg-[#0a0c12]">

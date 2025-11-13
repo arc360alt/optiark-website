@@ -43,7 +43,7 @@ export default function News() {
           <div className="bg-[#0f131c]/60 p-6 rounded-2xl shadow-md border border-gray-800 hover:border-blue-700/40 transition-all duration-300">
             <h4 className="text-2xl font-semibold mb-3 text-blue-400">
               OPTIARK VULKAN IS BACK{" "}
-              <span className="text-gray-400 text-sm">(2025-10-26)</span>
+              <span className="text-gray-400 text-sm">(2025-11-12)</span>
             </h4>
             <ul className="list-disc list-inside text-gray-300 space-y-1">
               <li>The developers of Vulkanmod have started releasing betas for 1.21.9 and 1.21.10.</li>

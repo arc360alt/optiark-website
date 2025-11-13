@@ -14,7 +14,9 @@ const DOWNLOAD_DATA = {
     "VulkanMod": {
         "1.20.1VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.20.1.1.8.VK.zip",
         "1.21.4VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.4.1.8.VK.zip",
-        "1.21.5VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.5.1.8.VK.zip"
+        "1.21.5VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.5.1.8.VK.zip",
+        "1.21.9VK": "",
+        "1.21.10VK": "",
     },
     "Nividium": {
         "1.20.1NV (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.20.1.1.8.NV.zip",
@@ -360,9 +362,11 @@ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
     {/* Versions Grid */}
 <div className="flex justify-center gap-6 flex-wrap mb-6">
-  {Object.keys(DOWNLOAD_DATA[selectedTech]).map((version) => {
+{Object.keys(DOWNLOAD_DATA[selectedTech]).map((version) => {
     const isUnsupported = version.toLowerCase().includes("unsupported");
     const cleanName = version.replace(/\(unsupported\)/gi, "").trim();
+    const downloadUrl = DOWNLOAD_DATA[selectedTech][version];
+    const isComingSoon = !downloadUrl || downloadUrl === "";
 
     // Detect Minecraft version (e.g., "1.20.1")
     const mcVersionMatch = cleanName.match(/\d+\.\d+(\.\d+)?/);
@@ -380,7 +384,7 @@ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        onClick={() => setSelectedVersion(version)} // make the card itself clickable
+        onClick={() => !isComingSoon && setSelectedVersion(version)}
       >
         {/* Dark overlay */}
         {backgroundImage && (
@@ -395,19 +399,28 @@ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
               Unsupported
             </span>
           )}
-          <button
-            onClick={(e) => {
-              e.stopPropagation(); // prevent triggering card click
-              setSelectedVersion(version);
-            }}
-            className={`px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 ${
-              selectedVersion === version
-                ? "bg-blue-500 text-white shadow-[0_0_15px_#3b82f6]"
-                : "bg-[#2a2f38] text-gray-300 hover:bg-[#3a3f48]"
-            }`}
-          >
-            Select
-          </button>
+          {isComingSoon ? (
+            <button
+              onClick={(e) => e.stopPropagation()}
+              className="px-4 py-2 rounded-lg font-medium text-sm bg-yellow-600/50 text-yellow-200 cursor-not-allowed"
+            >
+              Coming Soon
+            </button>
+          ) : (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedVersion(version);
+              }}
+              className={`px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 ${
+                selectedVersion === version
+                  ? "bg-blue-500 text-white shadow-[0_0_15px_#3b82f6]"
+                  : "bg-[#2a2f38] text-gray-300 hover:bg-[#3a3f48]"
+              }`}
+            >
+              Select
+            </button>
+          )}
         </div>
       </div>
     );

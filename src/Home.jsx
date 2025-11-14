@@ -15,8 +15,8 @@ const DOWNLOAD_DATA = {
         "1.20.1VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.20.1.1.8.VK.zip",
         "1.21.4VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.4.1.8.VK.zip",
         "1.21.5VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.5.1.8.VK.zip",
-        "1.21.9VK (Beta)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-vk-again/OptiArk.1.21.9.1.8.VK.zip",
-        "1.21.10VK (Beta)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-vk-again/OptiArk.1.21.10.1.8.VK.zip",
+        "1.21.9VK (Beta)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-vk-add/OptiArk.1.21.9.1.8.VK.zip",
+        "1.21.10VK (Beta)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-vk-add/OptiArk.1.21.10.1.8.VK.zip",
     },
     "Nividium": {
         "1.20.1NV (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.20.1.1.8.NV.zip",

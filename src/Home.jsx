@@ -15,8 +15,8 @@ const DOWNLOAD_DATA = {
         "1.20.1VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.20.1.1.8.VK.zip",
         "1.21.4VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.4.1.8.VK.zip",
         "1.21.5VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.21.5.1.8.VK.zip",
-        "1.21.9VK": "",
-        "1.21.10VK": "",
+        "1.21.9VK (Beta)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-vk-again/OptiArk.1.21.9.1.8.VK.zip",
+        "1.21.10VK (Beta)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-vk-again/OptiArk.1.21.10.1.8.VK.zip",
     },
     "Nividium": {
         "1.20.1NV (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.9-10hf/OptiArk.1.20.1.1.8.NV.zip",
@@ -38,6 +38,13 @@ const DOWNLOAD_DATA = {
         "1.8.9 OptiFine": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7OLD/OptiArk.1.8.9.1.7.OptiFine.mrpack",
         "1.12.2 Sodium": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7OLD/OptiArk.1.12.2.1.7.Sodium.mrpack",
         "1.12.2 OptiFine": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7OLD/OptiArk.1.12.2.1.7.OptiFine.mrpack"
+    }
+};
+
+const BUILD_COMMENTS = {
+    "VulkanMod": {
+        "1.21.9VK (Beta)": "If your having issues with the game starting, add this JVM Argument: -Dorg.lwjgl.system.stackSize=256",
+        "1.21.10VK (Beta)": "If your having issues with the game starting, add this JVM Argument: -Dorg.lwjgl.system.stackSize=256"
     }
 };
 
@@ -364,9 +371,11 @@ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 <div className="flex justify-center gap-6 flex-wrap mb-6">
 {Object.keys(DOWNLOAD_DATA[selectedTech]).map((version) => {
     const isUnsupported = version.toLowerCase().includes("unsupported");
-    const cleanName = version.replace(/\(unsupported\)/gi, "").trim();
+    const isBeta = version.toLowerCase().includes("beta");
+    const cleanName = version.replace(/\(unsupported\)/gi, "").replace(/\(beta\)/gi, "").trim();
     const downloadUrl = DOWNLOAD_DATA[selectedTech][version];
     const isComingSoon = !downloadUrl || downloadUrl === "";
+    const buildComment = BUILD_COMMENTS[selectedTech]?.[version];
 
     // Detect Minecraft version (e.g., "1.20.1")
     const mcVersionMatch = cleanName.match(/\d+\.\d+(\.\d+)?/);
@@ -399,6 +408,11 @@ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
               Unsupported
             </span>
           )}
+          {isBeta && (
+            <span className="text-xs text-yellow-300 bg-yellow-900/30 px-2 py-0.5 rounded">
+              Beta
+            </span>
+          )}
           {isComingSoon ? (
             <button
               onClick={(e) => e.stopPropagation()}
@@ -428,7 +442,7 @@ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 </div>
 
 
-    {/* Download Button */}
+{/* Download Button */}
     <div className="text-center mb-6">
       <button
         onClick={() => handleDownload(selectedVersion)}
@@ -436,6 +450,15 @@ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
       >
         Download {selectedVersion ? `— ${selectedVersion.replace(/\(unsupported\)/gi, "").trim()}` : ""}
       </button>
+      
+      {/* Build Comment */}
+      {BUILD_COMMENTS[selectedTech]?.[selectedVersion] && (
+        <div className="mt-4 max-w-2xl mx-auto">
+          <p className="text-sm text-gray-300 bg-gray-800/50 border border-gray-700 px-4 py-3 rounded-lg">
+            💬 <span className="font-semibold text-blue-400">Note:</span> {BUILD_COMMENTS[selectedTech][selectedVersion]}
+          </p>
+        </div>
+      )}
     </div>
 
     {/* Conversion Tool Info */}

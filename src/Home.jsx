@@ -170,7 +170,7 @@ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
           OptiArk
         </h1>
         <p className="max-w-2xl text-gray-400 mb-8 relative z-10">
-          A minecraft preformance modpack for 1.21.8
+          A minecraft preformance modpack for 1.20.1-1.21.10
         </p>
 
         {/* Buttons */}

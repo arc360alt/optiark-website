@@ -160,7 +160,7 @@ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
             <span className="text-white px-3 py-1 rounded bg-blue-700/30 font-semibold">Home</span>
             <a href="/#/news" className="text-gray-300 hover:text-white px-3 py-1 rounded transition-colors duration-200">News</a>
             <a href="/#/adventure" className="text-gray-300 hover:text-white px-3 py-1 rounded transition-colors duration-200">Adventure Edition</a>
-            
+            <a href="/#/converter" className="text-gray-300 hover:text-white px-3 py-1 rounded transition-colors duration-200">Converter</a>
           </div>
         </div>
 

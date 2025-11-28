@@ -177,6 +177,7 @@ const VERSION_BACKGROUNDS = {
     <span className="text-white px-3 py-1 rounded bg-blue-700/30 font-semibold">
       Adventure Edition
     </span>
+    <a href="/#/converter" className="text-gray-300 hover:text-white px-3 py-1 rounded transition-colors duration-200">Converter</a>
   </div>
 </div>
         {/* Overlay */}

@@ -15,6 +15,7 @@ export default function News() {
           <a href="/#/adventure" className="text-gray-300 hover:text-white px-3 py-1 rounded transition-colors duration-200">
             Adventure Edition
           </a>
+          <a href="/#/converter" className="text-gray-300 hover:text-white px-3 py-1 rounded transition-colors duration-200">Converter</a>
         </div>
       </div>
 

@@ -467,12 +467,12 @@ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
       <span className="text-green-400"> .mrpack </span> files for use in Modrinth, 
       use this tool:{" "}
       <a
-        href="https://github.com/arc360alt/OptiArk/releases/tag/converter0.1"
-        target="_blank"
+        href="/#/converter"
+        target=""
         rel="noopener noreferrer"
         className="text-blue-500 hover:text-blue-400 underline transition-colors"
       >
-        OptiArk Converter 0.1
+        OptiArk Converter
       </a>
     </p>
   </div>

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 const DOWNLOAD_LINKS = {
-  windows: "https://github.com/arc360alt/OptiArk/releases/download/converter0.2/converter-windows.zip",
-  linux: "https://github.com/arc360alt/OptiArk/releases/download/converter0.2/converter-linux.tar.gz",
-  macos: "https://github.com/arc360alt/OptiArk/releases/download/converter0.2/converter-macos.tar.gz"
+  windows: "https://github.com/arc360alt/OptiArk/releases/download/conv0.2.0/converter-windows.zip",
+  linux: "https://github.com/arc360alt/OptiArk/releases/download/conv0.2.0/converter-linux.tar.gz",
+  macos: "https://github.com/arc360alt/OptiArk/releases/download/conv0.2.0/converter-macos.tar.gz"
 };
 
 export default function ConverterDownload() {

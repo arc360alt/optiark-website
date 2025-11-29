@@ -70,7 +70,7 @@ export default function App() {
     "0.4.1": {
       name: "0.4.1 — The Pet update",
       date: "2025-09-13",
-      featured: true,
+      featured: false,
       changelog: [
         "Foxes are now tamable",
         "Pets now have personal Inventories",
@@ -84,11 +84,11 @@ export default function App() {
       images: ["/showcase1.png", "/showcase2.png"],
       download: "https://github.com/arc360alt/arcswebsite/releases/download/oa-ae/OptiArk.Adventure.Edition.0.4.1.mrpack",
     },
-    "0.5.0-test8": {
-      name: "0.5.0 — The Remake (IN DEVELOPMENT, BUGGY)",
+    "0.5.0": {
+      name: "0.5.0 — The Remake",
       date: "2025-10-25",
-      featured: false,
-      beta: true, 
+      featured: true,
+      beta: false, 
       changelog: [
         "Remade all the textures",
         "HMI updated so it looks much closer to A&S",
@@ -102,10 +102,10 @@ export default function App() {
         "Whole bunch of other things i forgot because ive been working on this 1 update for 3 weeks",
         "Removes BOP becuase it causes a bunch of mob texture issues",
         "Bug fixes from the last version",
-        "WARNING: Use this verison at your own risk, it could corrupt worlds if your not carful.",
+        "BUGS: Textures of some mobs can be broken in some biomes, this will be fixed soon.",
       ],
       images: ["/showcase1.png", "/showcase2.png"],
-      download: "https://github.com/arc360alt/optiark-website/releases/download/oaaev5/OptiArk.Adventure.Edition.0.5-test8.mrpack",
+      download: "https://github.com/arc360alt/optiark-website/releases/download/oaaev5r/OptiArk.Adventure.Edition.0.5.mrpack",
     },
   };
 

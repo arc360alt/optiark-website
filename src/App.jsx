@@ -84,8 +84,8 @@ export default function App() {
       images: ["/showcase1.png", "/showcase2.png"],
       download: "https://github.com/arc360alt/arcswebsite/releases/download/oa-ae/OptiArk.Adventure.Edition.0.4.1.mrpack",
     },
-    "0.5.0": {
-      name: "0.5.0 — The Remake",
+    "0.5.1": {
+      name: "0.5.1 — The Remake",
       date: "2025-10-25",
       featured: true,
       beta: false, 
@@ -104,8 +104,8 @@ export default function App() {
         "Bug fixes from the last version",
         "BUGS: Textures of some mobs can be broken in some biomes, this will be fixed soon.",
       ],
-      images: ["/showcase1.png", "/showcase2.png"],
-      download: "https://github.com/arc360alt/optiark-website/releases/download/oaaev5r/OptiArk.Adventure.Edition.0.5.mrpack",
+      images: ["/showcase3.png", "/showcase4.png"],
+      download: "https://github.com/arc360alt/optiark-website/releases/download/oaaev5r/OptiArk.Adventure.Edition.0.5.1.mrpack",
     },
   };
 

@@ -71,6 +71,7 @@ export default function App() {
       name: "0.4.1 — The Pet update",
       date: "2025-09-13",
       featured: false,
+      unsupported: true,
       changelog: [
         "Foxes are now tamable",
         "Pets now have personal Inventories",
@@ -87,7 +88,7 @@ export default function App() {
     "0.5.1": {
       name: "0.5.1 — The Remake",
       date: "2025-10-25",
-      featured: true,
+      featured: false,
       beta: false, 
       changelog: [
         "Remade all the textures",
@@ -106,6 +107,25 @@ export default function App() {
       ],
       images: ["/showcase3.png", "/showcase4.png"],
       download: "https://github.com/arc360alt/optiark-website/releases/download/oaaev5r/OptiArk.Adventure.Edition.0.5.1.mrpack",
+    },
+    "0.6.0": {
+      name: "0.6.0 — Bug Fix Update",
+      date: "2025-10-25",
+      featured: true,
+      beta: false, 
+      changelog: [
+      "Remove DH completly instead of disabling it",
+      "Use diffrent shaders that dont bring a 4090 to a crawl to increase preformance",
+      "Decrease studdering by installing Studder Fix",
+      "Make achevment toasts look MUCH better",
+      "Add more netherite tiers (not tested, i have no idea how the mod works)",
+      "Remove C2ME becuase after some testing it seems to make the game crash more often when changing dimensions and saving the game",
+      "add new hostile mob spawning animations",
+      "Make it so you can favorite worlds to the top of the list",
+      "Bug fixes (did not fix the mob textures, I have ZERO idea on how to fix that, if you could help me fix it please do)"
+      ],
+      images: ["/showcase3.png", "/showcase4.png"],
+      download: "https://github.com/arc360alt/optiark-website/releases/download/oaaev5r/OptiArk.Adventure.Edition.0.6.mrpack",
     },
   };
 

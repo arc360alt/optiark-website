@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const DOWNLOAD_DATA = {
     "Sodium": {
+        "1.21.11": "",
         "1.21.10": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-vk0.5.7/OptiArk.1.21.10.1.8.Sodium.zip",
         "1.21.9": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-vk0.5.7/OptiArk.1.21.9.1.8.Sodium.zip",
         "1.21.8": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-vk0.5.7/OptiArk.1.21.8.1.8.Sodium.zip",
@@ -12,6 +13,7 @@ const DOWNLOAD_DATA = {
         "1.20.1 (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-vk0.5.7/OptiArk.1.20.1.1.8.Sodium.zip"
     },
     "VulkanMod": {
+        "1.21.11VK": "",
         "1.21.10VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-vk0.5.7/OptiArk.1.21.10.1.8.VK.zip",
         "1.21.9VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-vk0.5.7/OptiArk.1.21.9.1.8.VK.zip",
         "1.21.5VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-vk0.5.7/OptiArk.1.21.5.1.8.VK.zip",
@@ -19,6 +21,7 @@ const DOWNLOAD_DATA = {
         "1.20.1VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-vk0.5.7/OptiArk.1.20.1.1.8.VK.zip"
     },
     "Nividium": {
+        "1.21.11NV": "",
         "1.21.10NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-vk0.5.7/OptiArk.1.21.10.1.8.NV.zip",
         "1.21.9NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-vk0.5.7/OptiArk.1.21.9.1.8.NV.zip",
         "1.21.8NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-vk0.5.7/OptiArk.1.21.8.1.8.NV.zip",
@@ -43,8 +46,8 @@ const DOWNLOAD_DATA = {
 
 const BUILD_COMMENTS = {
     "VulkanMod": {
-        "1.21.9VK (Beta)": "If your having issues with the game starting, add this JVM Argument: -Dorg.lwjgl.system.stackSize=256",
-        "1.21.10VK (Beta)": "If your having issues with the game starting, add this JVM Argument: -Dorg.lwjgl.system.stackSize=256"
+        "1.21.9VK": "If your having issues with the game starting, add this JVM Argument: -Dorg.lwjgl.system.stackSize=256",
+        "1.21.10VK": "If your having issues with the game starting, add this JVM Argument: -Dorg.lwjgl.system.stackSize=256"
     }
 };
 
@@ -59,6 +62,7 @@ const TECH_ICONS = {
 
 // Backgrounds for each Minecraft version
 const VERSION_BACKGROUNDS = {
+  "1.21.11": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/MCV_MountsOfMayhem_Launch_editorial_1170x500.jpg",
   "1.21.10": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.10%201170x500.jpg",
   "1.21.9": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.9_1170x500.jpg",
   "1.21.8": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.8%201170x500.jpg",

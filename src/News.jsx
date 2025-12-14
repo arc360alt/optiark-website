@@ -43,6 +43,18 @@ export default function News() {
 
           <div className="bg-[#0f131c]/60 p-6 rounded-2xl shadow-md border border-gray-800 hover:border-blue-700/40 transition-all duration-300">
             <h4 className="text-2xl font-semibold mb-3 text-blue-400">
+              1.21.11{" "}
+              <span className="text-gray-400 text-sm">(2025-11-12)</span>
+            </h4>
+            <ul className="list-disc list-inside text-gray-300 space-y-1">
+              <li>1.21.11 updates are in the works right now, I am waiting for an Nvidium release for 1.21.11, becasue I know vulkan mod 1.21.11 is not coming anytime soon.</li>
+              <li>But when nvidium 1.21.11 comes out I will build a version for it and upload it here.</li>
+              <li>Future for OptiArk and the minecraft numbering scheme: Optiark will remain being updated but just with the new update scheme, i will need to remake a bunch of stuff in my pipeline to get evreything to work for this change but dont worry, OptiArk is here to stay..</li>
+            </ul>
+          </div>
+
+          <div className="bg-[#0f131c]/60 p-6 rounded-2xl shadow-md border border-gray-800 hover:border-blue-700/40 transition-all duration-300">
+            <h4 className="text-2xl font-semibold mb-3 text-blue-400">
               OptiArk Adventure Edition 0.5{" "}
               <span className="text-gray-400 text-sm">(2025-11-12)</span>
             </h4>

@@ -232,12 +232,12 @@ const VERSION_BACKGROUNDS = {
           </button>
 
           <a
-            href="https://www.arc360hub.com/OptiArk/index.html"
+            href="https://optiark.arc360hub.com"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-white bg-purple-600 hover:bg-purple-500 rounded-xl shadow-lg shadow-purple-500/30 hover:shadow-purple-400/50 transition-all duration-300 hover:scale-105"
           >
-            Main OptiArk Website
+            Other OptiArk Packs
           </a>
         </div>
       </section>

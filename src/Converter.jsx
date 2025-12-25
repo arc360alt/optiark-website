@@ -170,7 +170,7 @@ export default function ConverterDownload() {
           {/* GitHub Link */}
           <div className="mt-12">
             <a
-              href="https://github.com/arc360alt/OptiArk"
+              href="https://github.com/arc360alt/OptiArk/tree/main/mmcpackconverter"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors duration-200"

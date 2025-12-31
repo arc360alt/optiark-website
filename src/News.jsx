@@ -49,7 +49,8 @@ export default function News() {
             <ul className="list-disc list-inside text-gray-300 space-y-1">
               <li>1.21.11 updates are in the works right now, I am waiting for an Nvidium release for 1.21.11, becasue I know vulkan mod 1.21.11 is not coming anytime soon.</li>
               <li>But when nvidium 1.21.11 comes out I will build a version for it and upload it here.</li>
-              <li>Future for OptiArk and the minecraft numbering scheme: Optiark will remain being updated but just with the new update scheme, i will need to remake a bunch of stuff in my pipeline to get evreything to work for this change but dont worry, OptiArk is here to stay..</li>
+              <li>Future for OptiArk and the minecraft numbering scheme: Optiark will remain being updated but just with the new update scheme, i will need to remake a bunch of stuff in my pipeline to get evreything to work for this change but dont worry, OptiArk is here to stay.</li>
+              <li>As of 12-31-25 there is a 1.21.11 Vulkan release in the works, Sodium is already published and theres vulkanmod 1.21.11 betas that i will not be publishing as a modpack but when it gets fully released i will try my best to release it as soon as i can.</li>
             </ul>
           </div>
 

@@ -2,34 +2,34 @@ import React, { useState } from "react";
 
 const DOWNLOAD_DATA = {
     "Sodium": {
-        "1.21.11": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.21.11.1.8.Sodium.zip",
-        "1.21.10": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.21.10.1.8.Sodium.zip",
-        "1.21.9": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.21.9.1.8.Sodium.zip",
-        "1.21.8": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.21.8.1.8.Sodium.zip",
-        "1.21.7": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.21.7.1.8.Sodium.zip",
-        "1.21.6": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.21.6.1.8.Sodium.zip",
-        "1.21.5": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.21.5.1.8.Sodium.zip",
-        "1.21.4 (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.21.4.1.8.Sodium.zip",
-        "1.20.1 (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.20.1.1.8.Sodium.zip"
+        "1.21.11": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.11.1.8.Sodium.zip",
+        "1.21.10": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.10.1.8.Sodium.zip",
+        "1.21.9": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.9.1.8.Sodium.zip",
+        "1.21.8": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.8.1.8.Sodium.zip",
+        "1.21.7": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.7.1.8.Sodium.zip",
+        "1.21.6": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.6.1.8.Sodium.zip",
+        "1.21.5": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.5.1.8.Sodium.zip",
+        "1.21.4 (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.4.1.8.Sodium.zip",
+        "1.20.1 (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.20.1.1.8.Sodium.zip"
     },
     "VulkanMod": {
-        "1.21.11VK": "",
-        "1.21.10VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.21.10.1.8.VK.zip",
-        "1.21.9VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.21.9.1.8.VK.zip",
-        "1.21.5VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.21.5.1.8.VK.zip",
-        "1.21.4VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.21.4.1.8.VK.zip",
-        "1.20.1VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.20.1.1.8.VK.zip"
+        "1.21.11VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.11.1.8.VK.zip",
+        "1.21.10VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.10.1.8.VK.zip",
+        "1.21.9VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.9.1.8.VK.zip",
+        "1.21.5VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.5.1.8.VK.zip",
+        "1.21.4VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.4.1.8.VK.zip",
+        "1.20.1VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.20.1.1.8.VK.zip"
     },
     "Nividium": {
-        "1.21.11NV": "",
-        "1.21.10NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.21.10.1.8.NV.zip",
-        "1.21.9NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.21.9.1.8.NV.zip",
-        "1.21.8NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.21.8.1.8.NV.zip",
-        "1.21.7NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.21.7.1.8.NV.zip",
-        "1.21.6NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.21.6.1.8.NV.zip",
-        "1.21.5NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.21.5.1.8.NV.zip",
-        "1.21.4 (Unsupported)NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.21.4.1.8.NV.zip",
-        "1.20.1 (Unsupported)NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-1.21.11/OptiArk.1.20.1.1.8.NV.zip"
+        "1.21.11NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.11.1.8.NV.zip",
+        "1.21.10NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.10.1.8.NV.zip",
+        "1.21.9NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.9.1.8.NV.zip",
+        "1.21.8NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.8.1.8.NV.zip",
+        "1.21.7NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.7.1.8.NV.zip",
+        "1.21.6NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.6.1.8.NV.zip",
+        "1.21.5NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.5.1.8.NV.zip",
+        "1.21.4 (Unsupported)NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.4.1.8.NV.zip",
+        "1.20.1 (Unsupported)NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.20.1.1.8.NV.zip"
     },
     "Embeddium": {
         "1.20.1": "https://github.com/arc360alt/arcswebsite/releases/download/oa1.7/OptiArk.1.20.1.1.7.EB.mrpack",
@@ -46,8 +46,9 @@ const DOWNLOAD_DATA = {
 
 const BUILD_COMMENTS = {
     "VulkanMod": {
-        "1.21.9VK": "If your having issues with the game starting, add this JVM Argument: -Dorg.lwjgl.system.stackSize=256",
-        "1.21.10VK": "If your having issues with the game starting, add this JVM Argument: -Dorg.lwjgl.system.stackSize=256"
+        "1.21.9VK": "If your having issues with the game starting, add this JVM Argument: -Dorg.lwjgl.system.stackSize=256.",
+        "1.21.10VK": "If your having issues with the game starting, add this JVM Argument: -Dorg.lwjgl.system.stackSize=256",
+        "1.21.11VK": "If your having issues with the game starting, add this JVM Argument: -Dorg.lwjgl.system.stackSize=256"
     }
 };
 
@@ -68,7 +69,7 @@ const VERSION_BACKGROUNDS = {
   "1.21.8": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.8%201170x500.jpg",
   "1.21.7": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.7-1170x500.jpg",
   "1.21.6": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.6_1170x500.jpg",
-  "1.21.5": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.5_1170x500.jpg", // blank for now
+  "1.21.5": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.5_1170x500.jpg",
   "1.21.4": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.21.4_1170x500.jpg",
   "1.20.1": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1.20.1%201170x500.jpg",
   "1.19.4": "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/screenshots/1_19_4_release_header.jpg",
@@ -174,7 +175,7 @@ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
           OptiArk
         </h1>
         <p className="max-w-2xl text-gray-400 mb-8 relative z-10">
-          A minecraft preformance modpack for 1.20.1-1.21.10
+          A minecraft preformance modpack for 1.20.1-1.21.11
         </p>
 
         {/* Buttons */}
@@ -255,6 +256,183 @@ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
           </div>
         </div>
       </section>
+
+{/* System Requirements Section */}
+<section className="py-20 px-8 bg-[#0a0e16] relative z-10">
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-3xl font-semibold mb-4 text-center text-blue-300">
+      System Requirements
+    </h2>
+    <p className="text-gray-400 mb-12 text-center">
+      Choose the right build for your hardware.
+    </p>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* Sodium Card */}
+      <div className="bg-[#151b25] rounded-2xl p-6 border border-gray-800 hover:border-blue-500/50 transition-all duration-300">
+        <div className="flex items-center gap-3 mb-4">
+          <img
+            src={TECH_ICONS.Sodium}
+            alt="Sodium"
+            className="w-10 h-10 rounded-lg"
+          />
+          <h3 className="text-2xl font-bold text-blue-400">Sodium</h3>
+        </div>
+        
+        <div className="space-y-4">
+          <div>
+            <h4 className="text-green-400 font-semibold mb-2">✓ Minimum</h4>
+            <ul className="text-gray-300 text-sm space-y-1 ml-4">
+              <li>• Java 21+</li>
+              <li>• 4GB RAM</li>
+              <li>• Intel HD 4000 / AMD Radeon R5 or equivalent</li>
+              <li>• OpenGL 4.6 support</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 className="text-blue-400 font-semibold mb-2">★ Recommended</h4>
+            <ul className="text-gray-300 text-sm space-y-1 ml-4">
+              <li>• Java 21+</li>
+              <li>• 8GB RAM</li>
+              <li>• GTX 1050 / RX 560 or better</li>
+              <li>• OpenGL 4.6 support</li>
+            </ul>
+          </div>
+        </div>
+        <p className="mt-4 text-xs text-green-300 bg-green-900/20 px-3 py-2 rounded-lg border border-green-700/30">
+          Recommended option for casual gameplay
+        </p>
+      </div>
+
+      {/* Nividium Card */}
+      <div className="bg-[#151b25] rounded-2xl p-6 border border-gray-800 hover:border-green-500/50 transition-all duration-300">
+        <div className="flex items-center gap-3 mb-4">
+          <img
+            src={TECH_ICONS.Nividium}
+            alt="Nividium"
+            className="w-10 h-10 rounded-lg"
+          />
+          <h3 className="text-2xl font-bold text-green-400">Nividium</h3>
+        </div>
+        
+        <div className="space-y-4">
+          <div>
+            <h4 className="text-green-400 font-semibold mb-2">✓ Minimum</h4>
+            <ul className="text-gray-300 text-sm space-y-1 ml-4">
+              <li>• Java 21+</li>
+              <li>• 6GB RAM</li>
+              <li>• <span className="text-green-400 font-semibold">NVIDIA GTX 1600 series or newer. </span><span className="text-xs text-gray-400 font-semibold">Older GPU's will not work as they dont have the required features.</span></li>
+              <li>• OpenGL 4.6 + NVIDIA drivers</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 className="text-blue-400 font-semibold mb-2">★ Recommended</h4>
+            <ul className="text-gray-300 text-sm space-y-1 ml-4">
+              <li>• Java 21+</li>
+              <li>• 8GB+ RAM</li>
+              <li>• <span className="text-green-400 font-semibold">NVIDIA RTX 2060 or better / GTX equivalent</span></li>
+              <li>• Latest NVIDIA drivers</li>
+            </ul>
+          </div>
+        </div>
+        
+        <p className="mt-4 text-xs text-yellow-300 bg-yellow-900/20 px-3 py-2 rounded-lg border border-yellow-700/30">
+          ⚠️ NVIDIA GPUs only, Can be buggy at times as this pack is using beta nvidium builds.
+        </p>
+      </div>
+
+      {/* VulkanMod Card */}
+      <div className="bg-[#151b25] rounded-2xl p-6 border border-gray-800 hover:border-red-500/50 transition-all duration-300">
+        <div className="flex items-center gap-3 mb-4">
+          <img
+            src={TECH_ICONS.VulkanMod}
+            alt="VulkanMod"
+            className="w-10 h-10 rounded-lg"
+          />
+          <h3 className="text-2xl font-bold text-red-400">VulkanMod</h3>
+        </div>
+        
+        <div className="space-y-4">
+          <div>
+            <h4 className="text-green-400 font-semibold mb-2">✓ Minimum</h4>
+            <ul className="text-gray-300 text-sm space-y-1 ml-4">
+              <li>• Java 21+</li>
+              <li>• 4GB RAM</li>
+              <li>• Vulkan 1.3 compatible GPU (Most GPU's newer than 2013 have Vulkan suported drivers)</li>
+              <li>• Latest GPU drivers with Vulkan support</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 className="text-blue-400 font-semibold mb-2">★ Recommended</h4>
+            <ul className="text-gray-300 text-sm space-y-1 ml-4">
+              <li>• Java 21+</li>
+              <li>• 8GB RAM</li>
+              <li>• GTX 1060 / RX 580 / Intel Arc A380 or better</li>
+              <li>• Latest Vulkan drivers</li>
+            </ul>
+          </div>
+        </div>
+        
+        <p className="mt-4 text-xs text-blue-300 bg-blue-900/20 px-3 py-2 rounded-lg border border-blue-700/30">
+          💡 Best performance gains on AMD and Intel GPUs
+        </p>
+      </div>
+
+      {/* Embeddium Card */}
+      <div className="bg-[#151b25] rounded-2xl p-6 border border-gray-800 hover:border-orange-500/50 transition-all duration-300">
+        <div className="flex items-center gap-3 mb-4">
+          <img
+            src={TECH_ICONS.Embeddium}
+            alt="Embeddium"
+            className="w-10 h-10 rounded-lg"
+          />
+          <h3 className="text-2xl font-bold text-orange-400">Embeddium</h3>
+        </div>
+        
+        <div className="space-y-4">
+          <div>
+            <h4 className="text-green-400 font-semibold mb-2">✓ Minimum</h4>
+            <ul className="text-gray-300 text-sm space-y-1 ml-4">
+              <li>• Java 17+ (version dependent)</li>
+              <li>• 4GB RAM</li>
+              <li>• Intel HD 4000 / AMD Radeon R5 or equivalent</li>
+              <li>• OpenGL 4.3 support</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 className="text-blue-400 font-semibold mb-2">★ Recommended</h4>
+            <ul className="text-gray-300 text-sm space-y-1 ml-4">
+              <li>• Java 17+</li>
+              <li>• 6GB RAM</li>
+              <li>• GTX 750 Ti / RX 460 or better</li>
+              <li>• OpenGL 4.6 support</li>
+            </ul>
+          </div>
+        </div>
+        
+        <p className="mt-4 text-xs text-purple-300 bg-purple-900/20 px-3 py-2 rounded-lg border border-purple-700/30">
+          🕰️ For older Minecraft versions (1.16.5-1.20.1)
+        </p>
+      </div>
+    </div>
+    <p style={{ margin: '18px' }}>Your CPU should have 4-6 cores at least for the best performance on all of these.</p>
+    {/* General Notes */}
+    <div className="mt-8 bg-[#151b25] rounded-xl p-6 border border-gray-800">
+      <h4 className="text-lg font-semibold text-gray-200 mb-3">📋 General Notes</h4>
+      <ul className="text-gray-400 text-sm space-y-2">
+        <li>• All builds require the latest GPU drivers for optimal performance</li>
+        <li>• RAM allocation of 4-6GB recommended for most scenarios</li>
+        <li>• These may be inaccurate, so if the GPU required is not on this list the game still may run.</li>
+        <li>• For best results, close background applications while gaming</li>
+        <li>• Please suggest changes to the required hardware as these are probably very inaccurate, I only know the Nvidium ones are accurate.</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
 {/* Performance Section */}
 <section id="performance" className="py-20 px-8 bg-[#0f131c] relative z-10">

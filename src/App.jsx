@@ -89,6 +89,7 @@ export default function App() {
       name: "0.5.1 — The Remake",
       date: "2025-10-25",
       featured: false,
+      unsupported: true,
       beta: false, 
       changelog: [
         "Remade all the textures",
@@ -111,8 +112,8 @@ export default function App() {
     "0.6.0": {
       name: "0.6.0 — Bug Fix Update",
       date: "2025-10-25",
-      featured: true,
       beta: false, 
+      unsupported: true,
       changelog: [
       "Remove DH completly instead of disabling it",
       "Use diffrent shaders that dont bring a 4090 to a crawl to increase preformance",
@@ -156,8 +157,15 @@ const VERSION_BACKGROUNDS = {
 
   
   return (
+    
     <div className="min-h-screen bg-gradient-to-b from-[#070b12] to-[#0a0e16] text-white font-sans overflow-x-hidden">
-      {/* Hero Section */}
+    {/* Deprecation Banner */}
+    <div className="w-full bg-red-700 text-white text-sm md:text-base px-4 py-3 flex flex-wrap items-center justify-center gap-3 text-center z-40 fixed top-12">
+      <span>⚠️ This modpack is now deprecated. Please try a new pack like <strong>Fresh & Smooth</strong> from Modrinth instead of this buggy mess.</span>
+      <a href="https://modrinth.com/modpack/fresh-smooth" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-red-700 font-bold px-3 py-1 rounded-lg hover:bg-red-100 transition-colors duration-200 whitespace-nowrap">
+        View on Modrinth →
+      </a>
+    </div>
       <section className="relative flex flex-col justify-center items-center text-center p-8 h-screen">
         {/* Background Glow */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-transparent blur-3xl animate-pulse pointer-events-none"></div>

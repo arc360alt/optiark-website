@@ -27,6 +27,11 @@ export default function ConverterDownload() {
         </div>
       </div>
 
+    {/* Deprecation Banner */}
+    <div className="w-full bg-red-700 text-white text-sm md:text-base px-4 py-3 flex flex-wrap items-center justify-center gap-3 text-center z-40 fixed top-12">
+      <span>⚠️ This converter is not needed anymore as any OptiArk version newer than 1.21.11 (and 1.21.11 itself) now uses the .mrpack format, for older versions, continue using this tool.</span>
+    </div>
+
       {/* Hero Section */}
       <section className="relative flex flex-col justify-center items-center text-center p-8 min-h-screen pt-32">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-transparent blur-3xl animate-pulse pointer-events-none"></div>

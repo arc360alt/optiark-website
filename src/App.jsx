@@ -443,7 +443,7 @@ onClick={() => {
 {/* Footer */}
 <footer className="py-10 text-center border-t border-gray-800 bg-[#0a0c12]">
   <p className="text-gray-400">
-    © 2025 Made with ❤️ by Arc360 :3{" "}
+    © 2026 Made with ❤️ by Arc360 :3{" "}
     <a
       href="https://github.com/arc360alt/optiark-website"
       className="text-blue-500 hover:text-blue-400 hover:underline transition-colors duration-200 font-semibold"

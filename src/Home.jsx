@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const DOWNLOAD_DATA = {
     "Sodium": {
-        "1.21.11": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.0.0/OptiArk-sodium-1.21.11.mrpack",
+        "1.21.11": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.1.0/OptiArk-sodium-1.21.11.mrpack",
         "1.21.10 (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.10.1.8.Sodium.zip",
         "1.21.9 (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.9.1.8.Sodium.zip",
         "1.21.8 (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.8.1.8.Sodium.zip",
@@ -13,7 +13,7 @@ const DOWNLOAD_DATA = {
         "1.20.1 (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.20.1.1.8.Sodium.zip"
     },
     "VulkanMod": {
-        "1.21.11VK": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.0.0/OptiArk-vulkanmod-1.21.11.mrpack",
+        "1.21.11VK": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.1.0/OptiArk-vulkanmod-1.21.11.mrpack",
         "1.21.10VK (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.10.1.8.VK.zip",
         "1.21.9VK (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.9.1.8.VK.zip",
         "1.21.5VK (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.5.1.8.VK.zip",
@@ -21,7 +21,7 @@ const DOWNLOAD_DATA = {
         "1.20.1VK (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.20.1.1.8.VK.zip"
     },
     "Nividium": {
-        "1.21.11NV": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.0.0/OptiArk-nvidium-1.21.11.mrpack",
+        "1.21.11NV": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.1.0/OptiArk-nvidium-1.21.11.mrpack",
         "1.21.10NV (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.10.1.8.NV.zip",
         "1.21.9NV (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.9.1.8.NV.zip",
         "1.21.8NV (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.8.1.8.NV.zip",

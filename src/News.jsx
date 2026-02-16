@@ -35,7 +35,7 @@ export default function News() {
           Update Log
         </h2>
         <p className="text-gray-400 mb-8">
-          Current General OptiArk Version: <span className="text-blue-400 font-semibold">1.8</span> (as of 2025-08-06)
+          Current General OptiArk Version: <span className="text-blue-400 font-semibold">1.1AR</span> (as of 2026-02-16)
         </p>
 
         <div className="space-y-10">
@@ -48,8 +48,8 @@ export default function News() {
             </h4>
             <ul className="list-disc list-inside text-gray-300 space-y-1">
               <li>I just rewrote the entire pack from the ground up with PackWiz.</li>
-              <li>This means ALL versions before 1.21.11 will probably NEVER be updated again, unless some game breaking issue comes out and enough people ask for it to be fixed..</li>
-              <li>This update will make 26.1 modpack creation much easier, and that update will come out a few weeks after the update releases to wait for all of the mods to become supported..</li>
+              <li>This means ALL versions before 1.21.11 will probably NEVER be updated again, unless some game breaking issue comes out and enough people ask for it to be fixed.</li>
+              <li>This update will make 26.1 modpack creation much easier, and that update will come out a few weeks after the update releases to wait for all of the mods to become supported.</li>
               <li>Thanks for using OptiArk!</li>
             </ul>
           </div>

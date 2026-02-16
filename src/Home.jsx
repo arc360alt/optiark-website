@@ -682,7 +682,7 @@ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   <p className="text-gray-400">
     © 2025 Made with ❤️ by Arc360 :3{" "}
     <a
-      href="https://github.com/arc360alt/OptiArk"
+      href="https://github.com/arc360alt/OptiArk-New"
       className="text-blue-500 hover:text-blue-400 hover:underline transition-colors duration-200 font-semibold"
     >
       Modpack Source 

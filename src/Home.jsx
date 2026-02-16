@@ -456,32 +456,36 @@ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
           <h2 className="text-3xl font-semibold mb-2 text-blue-300">
             Performance Benchmark
           </h2>
-          <p className="text-gray-400 mb-10">
-            See how OptiArk stacks up, tested on a ThinkPad with a 680M GPU.
+          <p className="text-gray-400 mb-2">
+            See how OptiArk stacks up, tested on a ThinkPad with a 680M GPU. Creative world using seed 1.
+          </p>
+
+          <p className="text-gray-400 mb-8">
+            Spesific Computer Detials: Lenovo Thinkpad E14, Ryzen 5 7535U, 680M GPU, KDE Plasma + Arch Linux
           </p>
 
           <div className="space-y-6">
             {[
               {
                 label: "OptiArk VULKAN",
-                value: 820,
+                value: 680,
                 color: "bg-red-500",
                 description:
-                  "Measured on a ThinkPad with 680M GPU using OptiArk Vulkan, exceptional performance boost. (Defualt settings that are set out of the box)",
+                  "Measured on a ThinkPad with 680M GPU using OptiArk Vulkan (Defualt settings that are set out of the box)",
               },
               {
                 label: "OptiArk (Default)",
-                value: 560,
+                value: 430,
                 color: "bg-blue-500",
                 description:
                   "Normal minecraft gameplay, using settings that are set out of the box with OptiArk.",
               },
               {
                 label: "Competitor Modpack",
-                value: 340,
+                value: 205,
                 color: "bg-green-500",
                 description:
-                  "Playing at the same exact settings as with Optiark, this modpack is the most popular one on Modrinth. Significant preformance loss.",
+                  "Playing at the same exact settings as with Optiark, this modpack is the most popular one on Modrinth. Using its defualt settings.",
               },
             ].map((test, i) => (
               <div

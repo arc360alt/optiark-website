@@ -28,7 +28,7 @@ export default function ConverterDownload() {
       </div>
 
     {/* Deprecation Banner */}
-    <div className="w-full bg-red-700 text-white text-sm md:text-base px-4 py-3 flex flex-wrap items-center justify-center gap-3 text-center z-40 fixed top-12">
+    <div className="w-full bg-yellow-600 text-white text-sm md:text-base px-4 py-3 flex flex-wrap items-center justify-center gap-3 text-center z-40 fixed top-12">
       <span>⚠️ This converter is not needed anymore as any OptiArk version newer than 1.21.11 (and 1.21.11 itself) now uses the .mrpack format, for older versions, continue using this tool.</span>
     </div>
 

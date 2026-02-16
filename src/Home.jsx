@@ -2,9 +2,9 @@ import React, { useState } from "react";
 
 const DOWNLOAD_DATA = {
     "Sodium": {
-        "1.21.11": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.11.1.8.Sodium.zip",
-        "1.21.10": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.10.1.8.Sodium.zip",
-        "1.21.9": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.9.1.8.Sodium.zip",
+        "1.21.11": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.0.0/OptiArk-sodium-1.21.11.mrpack",
+        "1.21.10 (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.10.1.8.Sodium.zip",
+        "1.21.9 (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.9.1.8.Sodium.zip",
         "1.21.8 (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.8.1.8.Sodium.zip",
         "1.21.7 (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.7.1.8.Sodium.zip",
         "1.21.6 (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.6.1.8.Sodium.zip",
@@ -13,17 +13,17 @@ const DOWNLOAD_DATA = {
         "1.20.1 (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.20.1.1.8.Sodium.zip"
     },
     "VulkanMod": {
-        "1.21.11VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.11.1.8.VK.zip",
-        "1.21.10VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.10.1.8.VK.zip",
-        "1.21.9VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.9.1.8.VK.zip",
-        "1.21.5VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.5.1.8.VK.zip",
-        "1.21.4VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.4.1.8.VK.zip",
-        "1.20.1VK": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.20.1.1.8.VK.zip"
+        "1.21.11VK": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.0.0/OptiArk-vulkanmod-1.21.11.mrpack",
+        "1.21.10VK (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.10.1.8.VK.zip",
+        "1.21.9VK (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.9.1.8.VK.zip",
+        "1.21.5VK (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.5.1.8.VK.zip",
+        "1.21.4VK (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.4.1.8.VK.zip",
+        "1.20.1VK (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.20.1.1.8.VK.zip"
     },
     "Nividium": {
-        "1.21.11NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.11.1.8.NV.zip",
-        "1.21.10NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.10.1.8.NV.zip",
-        "1.21.9NV": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.9.1.8.NV.zip",
+        "1.21.11NV": "https://github.com/arc360alt/OptiArk-New/releases/download/v1.0.0/OptiArk-nvidium-1.21.11.mrpack",
+        "1.21.10NV (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.10.1.8.NV.zip",
+        "1.21.9NV (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.9.1.8.NV.zip",
         "1.21.8NV (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.8.1.8.NV.zip",
         "1.21.7NV (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.7.1.8.NV.zip",
         "1.21.6NV (Unsupported)": "https://github.com/arc360alt/OptiArk/releases/download/optiark-v1.8-11nvvk/OptiArk.1.21.6.1.8.NV.zip",
@@ -46,8 +46,8 @@ const DOWNLOAD_DATA = {
 
 const BUILD_COMMENTS = {
     "VulkanMod": {
-        "1.21.9VK": "If your having issues with the game starting, add this JVM Argument: -Dorg.lwjgl.system.stackSize=256.",
-        "1.21.10VK": "If your having issues with the game starting, add this JVM Argument: -Dorg.lwjgl.system.stackSize=256",
+        "1.21.9VK (Unsupported)": "If your having issues with the game starting, add this JVM Argument: -Dorg.lwjgl.system.stackSize=256.",
+        "1.21.10VK (Unsupported)": "If your having issues with the game starting, add this JVM Argument: -Dorg.lwjgl.system.stackSize=256",
         "1.21.11VK": "If your having issues with the game starting, add this JVM Argument: -Dorg.lwjgl.system.stackSize=256"
     }
 };
@@ -60,6 +60,9 @@ const TECH_ICONS = {
   Embeddium: "https://cdn.modrinth.com/data/sk9rgfiA/55f9c50284f8abbbe2a485abfd6a16209201e451_96.webp",   
   Other: "https://avatars.githubusercontent.com/u/69833574?s=280&v=4"       
 };
+
+const BANNER_MESSAGE = "🚀 OptiArk has been rewritten from the ground up! New .mrpack format, cleaner structure, and better updates. Check the latest release!";
+const BANNER_LINK = "#downloads";
 
 // Backgrounds for each Minecraft version
 const VERSION_BACKGROUNDS = {
@@ -107,6 +110,16 @@ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#070b12] to-[#0a0e16] text-white font-sans overflow-x-hidden">
+<div className="fixed top-12 left-0 w-full z-40 bg-blue-600/95 backdrop-blur-sm border-b border-blue-400/30 text-white text-sm py-2 px-4 flex items-center justify-center gap-3 shadow-lg">
+  <span className="text-yellow-300 font-bold shrink-0">★ NEW</span>
+  <span className="text-center text-white/90">OptiArk has been fully rewritten — new .mrpack format, cleaner structure, and better updates.</span>
+  <button
+    onClick={() => document.getElementById("downloads")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+    className="shrink-0 bg-white text-blue-700 font-semibold px-3 py-0.5 rounded-full text-xs hover:bg-yellow-300 transition-colors duration-200"
+  >
+    See Downloads →
+  </button>
+</div>
       {/* Small toast warning (center top) */}
 {unsupportedWarning && (
   <div className="fixed inset-0 z-50 flex items-center justify-center">
@@ -186,15 +199,6 @@ const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
           >
             Download Now
           </button>
-
-          <a
-            href="https://arkmc.arc360hub.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold text-white bg-purple-600 hover:bg-purple-500 rounded-xl shadow-lg shadow-purple-500/30 hover:shadow-purple-400/50 transition-all duration-300 hover:scale-105"
-          >
-            Check out or minecraft server
-          </a>
         </div>
       </section>
 

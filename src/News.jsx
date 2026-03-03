@@ -35,11 +35,24 @@ export default function News() {
           Update Log
         </h2>
         <p className="text-gray-400 mb-8">
-          Current General OptiArk Version: <span className="text-blue-400 font-semibold">1.1AR</span> (as of 2026-02-16)
+          Current General OptiArk Version: <span className="text-blue-400 font-semibold">1.4AR</span> (as of 2026-03-02)
         </p>
 
         <div className="space-y-10">
           {/* Update Entry */}
+
+          <div className="bg-[#0f131c]/60 p-6 rounded-2xl shadow-md border border-gray-800 hover:border-blue-700/40 transition-all duration-300">
+            <h4 className="text-2xl font-semibold mb-3 text-blue-400">
+              Version 1.4.0{" "}
+              <span className="text-gray-400 text-sm">(2026-03-02)</span>
+            </h4>
+            <ul className="list-disc list-inside text-gray-300 space-y-1">
+              <li>Updates made in 1.4.0:</li>
+              <li>Add BBE To increase preformance while rendering a bunch of block entities.</li>
+              <li>Hopfuly fix the issue of Ore and Tree harvester not being added to Vulkan</li>
+              <li>Bug fixes.</li>
+            </ul>
+          </div>
 
           <div className="bg-[#0f131c]/60 p-6 rounded-2xl shadow-md border border-gray-800 hover:border-blue-700/40 transition-all duration-300">
             <h4 className="text-2xl font-semibold mb-3 text-blue-400">
